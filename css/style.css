@@ -1,0 +1,236 @@
+#wrap {
+    width: 100%;
+    height: 100%;
+}
+
+/* header */
+#header {
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+
+    .header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .header_top {
+            width: 100%;
+            padding: 5px 0;
+            /* background-color: #333; */
+
+            ul {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+
+                li {
+                    position: relative;
+                    padding: 5px 12px;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 46%;
+                        right: 0;
+                        width: 1px;
+                        height: 10px;
+                        transform: translateY(-50%);
+                        background-color: #e6e6e6;
+                    }
+                    &:last-child::after {
+                        display: none;
+                    }
+                    a {
+                        font-size: 1.4rem;
+                        color: #4d4d4d;
+                    }
+                }
+            }
+        }
+
+        .header_center {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0 30px;
+
+            .search_form {
+                position: relative;
+
+                .search_btn {
+                    width: 40px;
+                    height: 40px;
+                    position: absolute;
+                    top: 0;
+                    right: 5px;
+                    z-index: 1;
+                    background: url("../images/ico_header_search.svg") center center/ 18px no-repeat;
+                    cursor: pointer;
+                }
+                .search_input {
+                    width: 400px;
+                    height: 40px;
+                    padding-left: 15px;
+                    border-radius: 5px;
+                    border: 1px solid #ffa751;
+
+                    &:focus {
+                        outline: 0 none;
+                    }
+                }
+            }
+
+            .my_menu {
+                display: flex;
+                flex-direction: row;
+                gap: 0 10px;
+
+                .menu_link {
+                    width: 50px;
+                    height: 50px;
+                    display: block;
+
+                    &.menu_link1 {
+                        background: url("../images/top-util-compiltaion.png") left center/cover;
+                    }
+                    &.menu_link2 {
+                        background: url("../images/top-util-compiltaion.png") center center/cover;
+                    }
+                    &.menu_link3 {
+                        background: url("../images/top-util-compiltaion.png") right center/cover;
+                    }
+                }
+            }
+        }
+
+        .header_bottom {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 1.8rem;
+
+            .category {
+                width: 12%;
+
+                .side_menu_btn {
+                    width: 100%;
+                    padding: 15px 0;
+                    text-align-last: left;
+                    font-size: 1.8rem;
+                    background-color: transparent;
+
+                    .hambuger_ico {
+                        padding-right: 10px;
+                    }
+                }
+            }
+
+            .gnb {
+                width: 88%;
+
+                .header_nav {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    position: relative;
+                    padding-left: 30px;
+
+                    &::before {
+                        content: "";
+                        width: 1px;
+                        height: 20px;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        display: block;
+                        background-color: #ccc;
+                    }
+
+                    .header_nav_list {
+                        .gnb_link {
+                            display: block;
+                            padding: 15px 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* side_menu */
+#side_menu {
+    width: 220px;
+    height: 100%;
+    position: fixed;
+    top: 182px;
+    left: -100%;
+    padding: 30px 0;
+    transition: all 0.2s ease;
+    /* overflow-y: auto; */
+    background-color: #fff;
+
+    &.active {
+        left: 0;
+    }
+
+    .side_menu_nav {
+        height: 100%;
+
+        .side_menu_list {
+            height: calc(100% - 170px);
+            overflow-y: auto;
+
+            .side_menu_item {
+                &:hover {
+                    background-color: #eee;
+
+                    .side_menu_depth {
+                        display: block;
+                    }
+                }
+
+                .side_menu_link {
+                    width: 100%;
+                    display: block;
+                    padding: 10px 20px;
+                    font-size: 1.6rem;
+                }
+
+                .side_menu_depth {
+                    width: 220px;
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    display: none;
+                    padding: 30px 0;
+                    background-color: #ddd;
+                    z-index: 1;
+
+                    .depth_link {
+                        width: 100%;
+                        display: block;
+                        padding: 15px 20px;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+
+            &::-webkit-scrollbar {
+                width: 6px; /* 스크롤바 너비 */
+            }
+            &::-webkit-scrollbar-track {
+                background-color: transparent; /* 스크롤바 트랙 배경색 */
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #ffa751; /* 스크롤바 색 */
+                border-radius: 6px;
+            }
+        }
+    }
+}
