@@ -97,40 +97,97 @@
                 }
             }
         }
+    }
 
-        .header_bottom {
-            width: 100%;
+    #headerGnb {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        background-color: #fff;
+    
+        &.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .gnb_area {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             font-size: 1.8rem;
 
-            .category {
+            .side_menu_btn_box {
                 width: 12%;
-
+    
                 .side_menu_btn {
                     width: 100%;
                     padding: 15px 0;
-                    text-align-last: left;
+                    text-align: left;
                     font-size: 1.8rem;
                     background-color: transparent;
-
-                    .hambuger_ico {
-                        padding-right: 10px;
+    
+                    .menu_bars {
+                        width: auto;
+                        display: inline-block;
+                        padding-right: 5px;
+                        text-align: left;
+    
+                        .bar {
+                            width: 20px;
+                            height: 2px;
+                            display: inline-block;
+                            position: relative;
+                            top: -5px;
+                            right: 0px;
+                            transform: translateY(-50%);
+                            border-radius: 5px;
+                            background-color: #111;
+    
+                            &::after,
+                            &::before {
+                                content: "";
+                                width: 100%;
+                                height: 100%;
+                                display: block;
+                                position: absolute;
+                                left: 0;
+                                background-color: #111;
+                                transition: all 0.2s ease;
+                            }
+                            &::after {
+                                top: 5px;
+                            }
+                            &::before {
+                                top: -5px;
+                            }
+                        }
+                    }
+                    &.active .menu_bars {
+                        .bar {
+                            background-color: transparent;
+    
+                            &::after {
+                                top: 0;
+                                transform: rotate(140deg);
+                            }
+                            &::before {
+                                top: 0;
+                                transform: rotate(-140deg);
+                            }
+                        }
                     }
                 }
             }
-
-            .gnb {
+    
+            #gnb {
                 width: 88%;
-
-                .header_nav {
+    
+                .header_gnb {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     position: relative;
                     padding-left: 30px;
-
+    
                     &::before {
                         content: "";
                         width: 1px;
@@ -142,8 +199,8 @@
                         display: block;
                         background-color: #ccc;
                     }
-
-                    .header_nav_list {
+    
+                    .header_gnb_list {
                         .gnb_link {
                             display: block;
                             padding: 15px 20px;
@@ -152,5 +209,5 @@
                 }
             }
         }
-    }
+    }    
 }
