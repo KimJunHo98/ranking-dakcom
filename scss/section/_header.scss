@@ -1,5 +1,6 @@
 #header {
     width: 100%;
+    background-color: #fff;
 
     .header {
         width: 100%;
@@ -58,7 +59,6 @@
                     position: absolute;
                     top: 0;
                     right: 5px;
-                    z-index: 1;
                     background: url("../images/ico_header_search.svg") center center/ 18px no-repeat;
                     cursor: pointer;
                 }
@@ -92,7 +92,22 @@
                         background: url("../images/top-util-compiltaion.png") center center/cover;
                     }
                     &.menu_link3 {
+                        position: relative;
                         background: url("../images/top-util-compiltaion.png") right center/cover;
+
+                        .add {
+                            width: 18px;
+                            height: 18px;
+                            padding-top: 4px;
+                            display: block;
+                            position: absolute;
+                            top: 6px;
+                            right: 6px;
+                            text-align: center;
+                            border-radius: 10px;
+                            background-color: var(--accentCr);
+                            color: #fff;
+                        }
                     }
                 }
             }
@@ -103,11 +118,12 @@
         width: 100%;
         border-bottom: 1px solid #eee;
         background-color: #fff;
-    
+
         &.sticky {
             position: fixed;
             top: 0;
             left: 0;
+            z-index: 99;
         }
         .gnb_area {
             display: flex;
@@ -116,21 +132,34 @@
             font-size: 1.8rem;
 
             .side_menu_btn_box {
-                width: 12%;
-    
+                width: 140px;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    width: 1px;
+                    height: 16px;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                    display: block;
+                    background-color: #ccc;
+                }
+
                 .side_menu_btn {
                     width: 100%;
                     padding: 15px 0;
                     text-align: left;
                     font-size: 1.8rem;
                     background-color: transparent;
-    
+
                     .menu_bars {
                         width: auto;
                         display: inline-block;
                         padding-right: 5px;
                         text-align: left;
-    
+
                         .bar {
                             width: 20px;
                             height: 2px;
@@ -141,7 +170,7 @@
                             transform: translateY(-50%);
                             border-radius: 5px;
                             background-color: #111;
-    
+
                             &::after,
                             &::before {
                                 content: "";
@@ -164,7 +193,7 @@
                     &.active .menu_bars {
                         .bar {
                             background-color: transparent;
-    
+
                             &::after {
                                 top: 0;
                                 transform: rotate(140deg);
@@ -177,29 +206,16 @@
                     }
                 }
             }
-    
+
             #gnb {
-                width: 88%;
-    
+                width: 86%;
+                padding-left: 4px;
+
                 .header_gnb {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    position: relative;
-                    padding-left: 30px;
-    
-                    &::before {
-                        content: "";
-                        width: 1px;
-                        height: 20px;
-                        position: absolute;
-                        top: 50%;
-                        left: 0;
-                        transform: translateY(-50%);
-                        display: block;
-                        background-color: #ccc;
-                    }
-    
+
                     .header_gnb_list {
                         .gnb_link {
                             display: block;
@@ -209,5 +225,5 @@
                 }
             }
         }
-    }    
+    }
 }

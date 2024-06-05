@@ -1,13 +1,25 @@
-#side_menu {
+#sideMenu {
     width: 220px;
-    height: 100%;
-    position: fixed;
-    top: 180px;
+    height: calc(100vh - 180px);
+    position: absolute;
+    top: 182px;
     left: 0;
+    z-index: 9;
     display: none;
-    padding: 30px 0;
     border-right: 1px solid #eee;
+    background-color: #fff;
 
+    &.fixed {
+        height: calc(100vh - 54px);
+        position: fixed;
+        top: 54px;
+
+        .side_menu_nav {
+            .side_menu_list {
+                height: calc(100% - 40px);
+            }
+        }
+    }
     &.active {
         display: block;
     }
@@ -16,15 +28,21 @@
     }
 
     .side_menu_nav {
+        width: 100%;
         height: 100%;
+        position: relative;
 
         .side_menu_list {
-            height: calc(100% - 170px);
+            width: 100%;
+            height: 100%;
+            padding: 30px 0;
             overflow-y: auto;
 
             .side_menu_item {
+                width: 100%;
+
                 &:hover {
-                    background-color: var(--mainCr);
+                    background-color: #eee;
 
                     .side_menu_depth {
                         display: block;
@@ -45,34 +63,35 @@
                         background-size: contain;
                         background-repeat: no-repeat;
                     }
-                    // &:hover,
-                    // &.depth_hover {
-                    //     color: var(--accentCr);
-                    // }
+                    &:hover,
+                    &.depth_hover {
+                        font-weight: 500;
+                        color: var(--accentCr);
+                    }
                     @for $i from 1 through 22 {
                         &#{$i} {
                             .bg_ico {
                                 background-image: url("../images/menu-icon#{$i}.png");
                             }
-                            // &:hover .bg_ico {
-                            //     background-image: url("../images/menu-icon#{$i}-hover.png");
-                            // }
+                            &:hover .bg_ico {
+                                background-image: url("../images/menu-icon#{$i}-hover.png");
+                            }
                         }
-                        // &.depth_hover:nth-child(#{$i}) .bg_ico {
-                        //     background-image: url("../images/menu-icon#{$i}-hover.png");
-                        // }
+                        &.depth_hover:nth-child(#{$i}) .bg_ico {
+                            background-image: url("../images/menu-icon#{$i}-hover.png");
+                        }
                     }
                 }
-
                 .side_menu_depth {
-                    width: 220px;
+                    width: 100%;
                     height: 100%;
                     position: absolute;
                     top: 0;
                     left: 100%;
                     display: none;
                     padding: 30px 0;
-                    background-color: var(--mainCr);
+                    overflow-y: auto;
+                    background-color: #eee;
 
                     .depth_link {
                         width: 100%;
@@ -81,7 +100,8 @@
                         font-size: 1.6rem;
 
                         &:hover {
-                            background-color: #fff;
+                            font-weight: 500;
+                            color: var(--accentCr);
                         }
                     }
                 }

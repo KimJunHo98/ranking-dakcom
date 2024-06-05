@@ -3,6 +3,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="랭킹닭컴을 리뉴얼한 퍼블리싱 사이트입니다." />
+        <meta name="keywords" content="랭킹닭컴, 리뉴얼, 웹, 반응형" />
+        <meta name="author" content="김준호" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="google" content="notranslate" />
+        <meta property="og:title" content="랭킹닭컴" />
+        <meta property="og:description" content="랭킹닭컴을 리뉴얼하여 퍼블리싱한 웹 사이트입니다." />
+        <!-- <meta property="og:url" content="https://anbd-market.vercel.app/" /> -->
         <title>랭킹닭컴</title>
 
         <!-- css -->
@@ -34,7 +43,11 @@
                             </div>
                             <div class="header_center">
                                 <h1 class="main_logo">
-                                    <a href="/" class="logo_link"><img src="images/logo.png" alt="랭킹닭컴" class="main_logo_img" /></a>
+                                    <a href="/" class="logo_link">
+                                        <figure>
+                                            <img src="images/logo.png" alt="랭킹닭컴" class="main_logo_img" />
+                                        </figure>
+                                    </a>
                                 </h1>
                                 <form method="get" class="search_form">
                                     <label for="search_input" class="blind">검색창</label>
@@ -61,6 +74,7 @@
                                     <li class="menu_list">
                                         <a href="#" class="menu_link menu_link3">
                                             <span class="blind">장바구니</span>
+                                            <em class="add">0</em>
                                         </a>
                                     </li>
                                 </ul>
@@ -92,7 +106,9 @@
                                         <li class="header_gnb_list"><a href="#" class="gnb_link">이벤트</a></li>
                                         <li class="header_gnb_list">
                                             <a href="#" class="gnb_link gnb_ico">
-                                                <img src="./images/IMG1648CEL614146730.png" alt="특급배송" />
+                                                <figure>
+                                                    <img src="./images/IMG1648CEL614146730.png" alt="특급배송" />
+                                                </figure>
                                             </a>
                                         </li>
                                     </ul>
@@ -102,7 +118,8 @@
                     </div>
                 </section>
             </header>
-            <aside id="side_menu">
+            <aside id="sideMenu">
+                <h2 class="blind">사이드 메뉴</h2>
                 <nav class="side_menu_nav">
                     <ul class="side_menu_list">
                         <li class="side_menu_item">
@@ -113,76 +130,486 @@
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link2"><span class="bg_ico"></span>닭가슴살</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">프로</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">스팀·소프트</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">소스닭가슴살</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">스테이크</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">소시지·햄</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">저염·염분무첨가</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">생 닭가슴살</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">훈제</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">볼·큐브</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">슬라이스</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">냉장·실온보관</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">핫바·어묵바</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">스낵·칩</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">크리스피</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">육포</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link3"><span class="bg_ico"></span>도시락·볶음밥</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">볶음밥</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">다이어트</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">도시락</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">주먹밥·김밥</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">더담은 도시락</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">간편 도시락</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">덮밥·컵밥</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">즉석밥·곤약밥</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">간편</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">죽</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">비건 도시락</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link4"><span class="bg_ico"></span>음료·차·프로틴</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">프로틴</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">쉐이크</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">프로틴</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">음료</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">물·탄산수</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">보충제·부스터</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">우유·두유·요거트</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">커피·차</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">클렌즈·주스</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">제로음료</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link5"><span class="bg_ico"></span>즉석 간편식</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">브리또</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">치킨</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">핫도그</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">즉석밥·곤약밥</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">만두·딤섬</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">떡볶이·튀김·순대</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">피자·탕수육</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">라면·쌀국수</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">곤약면·파스타</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">삼계탕</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">죽·스프</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link6"><span class="bg_ico"></span>소고기</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">스테이크·볼</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">설도·홍두깨살</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">국거리·조리용</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link7"><span class="bg_ico"></span>견과·고구마·감자</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">고구마·감자</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">단호박</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">견과·옥수수</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link8"><span class="bg_ico"></span>샐러드·과일</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">알뜰샐러드</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">토핑샐러드</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">과일</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">야채</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">믹스</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link9"><span class="bg_ico"></span>계란·난백·콩</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">난백·흰자</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">구운·훈제란</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">반숙란</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">콩·두부</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link10"><span class="bg_ico"></span>닭안심살</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">소프트</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">생</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">안심</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link11"><span class="bg_ico"></span>과자·간식·떡</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">시리얼·바</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">젤리·쫀드기</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">초콜릿</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">프로틴</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">스낵</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">과자·쿠키</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">아이스크림</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">떡</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">오트밀</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link12"><span class="bg_ico"></span>수산·해산</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">생선구이</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">어묵·맛살</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">오징어·문어</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">연어·참치</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">스테이크</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">황태포·쥐포</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">갑각류·해조류</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link13"><span class="bg_ico"></span>베이커리·치즈</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">베이커리</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">햄버거</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">치즈</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link14"><span class="bg_ico"></span>돼지·오리고기</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">돼지고기</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">오리고기</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link15"><span class="bg_ico"></span>식단·패키지</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">골라담기</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">맛보기·패키지</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">식단</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">선물세트</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link16"><span class="bg_ico"></span>소스·오일</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">소스·드레싱</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">분말·시즈닝</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">잼·스프레드</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">오일</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">과일청</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link17"><span class="bg_ico"></span>반찬·밀키트·안주</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">카레·짜장·짬뽕</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">밀키트</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">잡채</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">건강반찬</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">국·탕·찌개</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">건강</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">안주</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">햄·소시지</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link18"><span class="bg_ico"></span>펫푸드</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">닭가슴살</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">간식</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">영양식품</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">동결건조사료 </a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">우유/두유</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link19"><span class="bg_ico"></span>건강식품</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">영양제·비타민</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">흑마늘·꿀·홍삼</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">과일·건강즙</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">다이어트</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">보조제</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link"></a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link20"><span class="bg_ico"></span>운동·생활용품</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">보호대·밴드</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">스트랩·장갑</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">보틀·쉐이커</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">스포츠웨어</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">홈트레이닝</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">홈·리빙용품</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">굿즈</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">데일리웨어</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link21"><span class="bg_ico"></span>채식식단</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">도시락</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">샐러드</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">대체육·콩고기</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">비건만두</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">콩·두부</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">떡볶이</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">빵·스낵</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">음료·두유</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">과일</a></li>
+                            </ul>
                         </li>
                         <li class="side_menu_item">
                             <a href="#" class="side_menu_link side_menu_link22"><span class="bg_ico"></span>선물하기</a>
+                            <ul class="side_menu_depth">
+                                <li class="depth_item"><a href="#" class="depth_link">전체</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">테마별</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">가격대별</a></li>
+                                <li class="depth_item"><a href="#" class="depth_link">카테고리</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
             </aside>
+            <!-- visual -->
+            <section id="visual">
+                <div class="visual_inner">
+                    <h2 class="blind">비주얼 슬라이드</h2>
+                    <!-- 슬라이드 영역 -->
+                    <div class="visual_carousel_wrap">
+                        <div class="carousel_item">
+                            <figure>
+                                <img src="./images/banner1.jpg" alt="건강한 삼시세끼를 부탁해! 우리가족 행복 프로젝트" class="visual_img" />
+                            </figure>
+                        </div>
+                        <div class="carousel_item">
+                            <figure>
+                                <img
+                                    src="./images/banner2.jpg"
+                                    alt="고독한 시리즈 단독 출시! 맛과 멋으로 완성한 랭킹닭컴&고독한 갯츠비 콜라보 보디빌더 레시피"
+                                    class="visual_img"
+                                />
+                            </figure>
+                        </div>
+                        <div class="carousel_item">
+                            <figure>
+                                <img
+                                    src="./images/banner3.jpg"
+                                    alt="특제 저당소스 듬뿍! 당류 걱정없는 촉촉 닭가슴살! 맛있닭 저당소스 통 닭가슴살"
+                                    class="visual_img"
+                                />
+                            </figure>
+                        </div>
+                        <div class="carousel_item">
+                            <figure>
+                                <img
+                                    src="./images/banner4.jpg"
+                                    alt="특별한 맛 wow! 톡톡 튀는 식감 wow! 잇메이트 닭가슴살 소시지"
+                                    class="visual_img"
+                                />
+                            </figure>
+                        </div>
+                        <div class="carousel_item">
+                            <figure>
+                                <img src="./images/banner5.jpg" alt="처음, 오랜만에 오신 고객님을 위한 큰 혜택!" class="visual_img" />
+                            </figure>
+                        </div>
+                        <div class="carousel_item">
+                            <figure>
+                                <img
+                                    src="./images/banner6.jpg"
+                                    alt="촉촉하게 즐기는 고단백 정착템! 맛있닭 스팀 닭가슴살"
+                                    class="visual_img"
+                                />
+                            </figure>
+                        </div>
+                        <div class="carousel_item">
+                            <figure>
+                                <img
+                                    src="./images/banner7.jpg"
+                                    alt="오늘도 식단으로 정진하라! 쉐프 출신 보디빌더의 특급 콜라보! 랭킹닭컴&코리안 헤라클래스 이용승"
+                                    class="visual_img"
+                                />
+                            </figure>
+                        </div>
+                        <div class="carousel_item">
+                            <figure>
+                                <img
+                                    src="./images/banner8.jpg"
+                                    alt="식단 쇼핑 페스티벌! 브랜드 릴레이 세일! 매주 금요일마다 new 오픈"
+                                    class="visual_img"
+                                />
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- 슬라이드 컨트롤 -->
+                    <div class="carousel_control_cotainer">
+                        <div class="carousel_navigation">
+                            <button type="button" class="prev carousel_control_btns">
+                                <span class="blind">이전</span><i class="fa-solid fa-angle-left"></i>
+                            </button>
+                            <span class="count"></span>
+                            <button type="button" class="next carousel_control_btns">
+                                <span class="blind">다음</span><i class="fa-solid fa-angle-right"></i>
+                            </button>
+                        </div>
+                        <div class="carousel_control">
+                            <button type="button" class="play carousel_control_btns">
+                                <span class="blind">재생</span><i class="fa-solid fa-play"></i>
+                            </button>
+                            <button type="button" class="pause carousel_control_btns">
+                                <span class="blind">정지</span><i class="fa-solid fa-pause"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- quick_menu -->
+            <section id="quickMenu">
+                <div class="container">
+                    <div class="inner">
+                        <h2 class="blind">퀵메뉴</h2>
+                        <div class="quick_menu">
+                            <button class="qm_btns qm_prev_btn"><span class="blind">이전</span><i class="fa-solid fa-angle-left"></i></button>
+                            <ul class="quick_menu_list">
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link1"
+                                        ><span class="bg_ico"></span><em class="qm_txt">신상품</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link2"
+                                        ><span class="bg_ico"></span><em class="qm_txt">닭가슴살</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link3"
+                                        ><span class="bg_ico"></span><em class="qm_txt">도시락·볶음밥</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link4"
+                                        ><span class="bg_ico"></span><em class="qm_txt">음료·차·프로틴</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link5"
+                                        ><span class="bg_ico"></span><em class="qm_txt">즉석 간편식</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link6"
+                                        ><span class="bg_ico"></span><em class="qm_txt">소고기</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link7"
+                                        ><span class="bg_ico"></span><em class="qm_txt">견과·고구마·감자</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link8"
+                                        ><span class="bg_ico"></span><em class="qm_txt">샐러드·과일</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link9"
+                                        ><span class="bg_ico"></span><em class="qm_txt">계란·난백·콩</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link10"
+                                        ><span class="bg_ico"></span><em class="qm_txt">닭안심살</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link11"
+                                        ><span class="bg_ico"></span><em class="qm_txt">과자·간식·떡</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link12"
+                                        ><span class="bg_ico"></span><em class="qm_txt">수산·해산</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link13"
+                                        ><span class="bg_ico"></span><em class="qm_txt">베이커리·치즈</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link14"
+                                        ><span class="bg_ico"></span><em class="qm_txt">돼지·오리고기</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link15"
+                                        ><span class="bg_ico"></span><em class="qm_txt">식단·패키지</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link16"
+                                        ><span class="bg_ico"></span><em class="qm_txt">소스·오일</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link17"
+                                        ><span class="bg_ico"></span><em class="qm_txt">반찬·밀키트·안주</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link18"
+                                        ><span class="bg_ico"></span><em class="qm_txt">펫푸드</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link19"
+                                        ><span class="bg_ico"></span><em class="qm_txt">건강식품</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link20"
+                                        ><span class="bg_ico"></span><em class="qm_txt">운동·생활용품</em></a
+                                    >
+                                </li>
+                                <li class="quick_menu_item">
+                                    <a href="#" class="quick_menu_link quick_menu_link21"
+                                        ><span class="bg_ico"></span><em class="qm_txt">채식식단</em></a
+                                    >
+                                </li>
+                            </ul>
+                            <button class="qm_btns qm_next_btn"><span class="blind">다음</span><i class="fa-solid fa-angle-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- footer -->
             <footer id="footer"></footer>
         </div>
 
         <!-- script -->
         <script src="https://kit.fontawesome.com/0ac9b1c2eb.js" crossorigin="anonymous"></script>
         <script src="js/custom.js"></script>
-        <script src="js/backImage.js"></script>
+        <script src="js/slide.js"></script>
     </body>
 </html>
