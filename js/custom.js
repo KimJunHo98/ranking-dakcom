@@ -1,9 +1,14 @@
 const body = document.querySelector("body");
 const headerGnb = document.getElementById("headerGnb");
+// 사이드 메뉴
 const sideMenu = document.getElementById("sideMenu");
 const sideMenuBtn = document.querySelector(".side_menu_btn");
 const sideMenuLink = document.querySelector(".side_menu_link");
 const sideMenuDepth = document.querySelector(".side_menu_depth");
+// 푸터
+const selectMenu = document.querySelector(".select_menu");
+const upIco = document.querySelector(".up_ico");
+const fmBtn = document.querySelector(".fm_btn");
 
 // 스티키 헤더
 function scrollStickyHeader() {
@@ -42,9 +47,15 @@ function pageScrollBlock() {
     body.style.overflow = "auto";
 }
 
+function handleClickFmBtn() {
+    selectMenu.classList.toggle("active");
+    upIco.classList.toggle("rotate");
+}
+
 window.addEventListener("scroll", scrollStickyHeader);
+fmBtn.addEventListener("click", handleClickFmBtn);
+sideMenuBtn.addEventListener("click", handleEnterSideMenu);
 sideMenu.addEventListener("pointerenter", pageScrollNone);
 sideMenu.addEventListener("pointerleave", pageScrollBlock);
-sideMenuBtn.addEventListener("click", handleEnterSideMenu);
 sideMenuDepth.addEventListener("pointerenter", handleEnterSideMenuDepth);
 sideMenuDepth.addEventListener("pointerleave", handleLeaveSideMenuDepth);

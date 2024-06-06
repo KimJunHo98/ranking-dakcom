@@ -19,6 +19,11 @@
     </head>
     <body>
         <div id="wrap">
+            <aside class="skip">
+                <ul>
+                    <li><a href="#"></a></li>
+                </ul>
+            </aside>
             <!-- header -->
             <header id="header">
                 <div class="container">
@@ -26,22 +31,6 @@
                         <h2 class="blind">헤더</h2>
                         <div class="header">
                             <div class="header_top">
-                                <ul class="util">
-                                    <li class="util_list">
-                                        <a href="#" class="util_link">로그인</a>
-                                    </li>
-                                    <li class="util_list">
-                                        <a href="#" class="util_link">회원가입</a>
-                                    </li>
-                                    <li class="util_list">
-                                        <a href="#" class="util_link">주문조회</a>
-                                    </li>
-                                    <li class="util_list">
-                                        <a href="#" class="util_link">고객센터</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="header_center">
                                 <h1 class="main_logo">
                                     <a href="/" class="logo_link">
                                         <figure>
@@ -76,6 +65,22 @@
                                             <span class="blind">장바구니</span>
                                             <em class="add">0</em>
                                         </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header_center">
+                                <ul class="util">
+                                    <li class="util_list">
+                                        <a href="#" class="util_link">로그인</a>
+                                    </li>
+                                    <li class="util_list">
+                                        <a href="#" class="util_link">회원가입</a>
+                                    </li>
+                                    <li class="util_list">
+                                        <a href="#" class="util_link">주문조회</a>
+                                    </li>
+                                    <li class="util_list">
+                                        <a href="#" class="util_link">고객센터</a>
                                     </li>
                                 </ul>
                             </div>
@@ -118,6 +123,7 @@
                     </div>
                 </section>
             </header>
+            <!-- side menu -->
             <aside id="sideMenu">
                 <h2 class="blind">사이드 메뉴</h2>
                 <nav class="side_menu_nav">
@@ -391,11 +397,10 @@
                     </ul>
                 </nav>
             </aside>
-            <!-- visual -->
+            <!-- visual slide -->
             <section id="visual">
                 <div class="visual_inner">
                     <h2 class="blind">비주얼 슬라이드</h2>
-                    <!-- 슬라이드 영역 -->
                     <div class="visual_carousel_wrap">
                         <div class="carousel_item">
                             <figure>
@@ -484,13 +489,12 @@
                     </div>
                 </div>
             </section>
-            <!-- quick_menu -->
+            <!-- quick menu -->
             <section id="quickMenu">
                 <div class="container">
                     <div class="inner">
                         <h2 class="blind">퀵메뉴</h2>
                         <div class="quick_menu">
-                            <button class="qm_btns qm_prev_btn"><span class="blind">이전</span><i class="fa-solid fa-angle-left"></i></button>
                             <ul class="quick_menu_list">
                                 <li class="quick_menu_item">
                                     <a href="#" class="quick_menu_link quick_menu_link1"
@@ -598,13 +602,69 @@
                                     >
                                 </li>
                             </ul>
-                            <button class="qm_btns qm_next_btn"><span class="blind">다음</span><i class="fa-solid fa-angle-right"></i></button>
+                            <button type="button" class="qm_prev_btn">
+                                <span class="blind">이전</span><i class="fa-solid fa-angle-left"></i>
+                            </button>
+                            <button type="button" class="qm_next_btn">
+                                <span class="blind">다음</span><i class="fa-solid fa-angle-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
             <!-- footer -->
-            <footer id="footer"></footer>
+            <footer id="footer">
+                <h2 class="blind">푸터</h2>
+                    <div class="footer_top">
+                        <div class="footer_menu">
+                            <ul class="footer_menu_list">
+                                <li class="footer_menu_item"><a href="#" class="ft_menu_link">회사소개</a></li>
+                                <li class="footer_menu_item"><a href="#" class="ft_menu_link">공지사항</a></li>
+                                <li class="footer_menu_item"><a href="#" class="ft_menu_link">입점 · 제휴 · 광고문의</a></li>
+                                <li class="footer_menu_item"><a href="#" class="ft_menu_link">이용약관</a></li>
+                                <li class="footer_menu_item"><a href="#" class="ft_menu_link">개인정보처리방침</a></li>
+                            </ul>
+                            <article class="family_select">
+                                <button type="button" class="fm_btn">
+                                    패밀리사이트<span class="up_ico"><i class="fa-solid fa-angle-up"></i></span>
+                                </button>
+                                <div class="select_menu">
+                                    <ul class="select_menu_list">
+                                        <li class="select_menu_item">
+                                            <a href="https://rankingdak.com/" target="_blank" class="sm_menu_link"><span>랭킹닭컴</span></a>
+                                        </li>
+                                        <li class="select_menu_item">
+                                            <a href="https://www.ggjmart.com/" target="_blank" class="sm_menu_link"
+                                                ><span>개근질마트</span></a
+                                            >
+                                        </li>
+                                        <li class="select_menu_item">
+                                            <a href="https://www.ggjil.com/" target="_blank" class="sm_menu_link"
+                                                ><span>개근질닷컴</span></a
+                                            >
+                                        </li>
+                                        <li class="select_menu_item">
+                                            <a href="https://pickydiet.co.kr/" target="_blank" class="sm_menu_link"
+                                                ><span>피키다이어트</span></a
+                                            >
+                                        </li>
+                                        <li class="select_menu_item">
+                                            <a href="http://dacook.co.kr/" target="_blank" class="sm_menu_link"
+                                                ><span>다이어트전문 레시피 다쿡</span></a
+                                            >
+                                        </li>
+                                        <li class="select_menu_item">
+                                            <a href="http://www.studiou.co.kr/" target="_blank" class="sm_menu_link"
+                                                ><span>바디프로필 전문 스튜디오U</span></a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
+                </div>
+                <div class="footer_bottom"></div>
+            </footer>
         </div>
 
         <!-- script -->
