@@ -1,0 +1,17 @@
+#skip .skip_menu_item {
+    .skip_link {
+        position: absolute;
+        left: 10px;
+        top: -92px;
+        z-index: 100000;
+        font-size: 1.8rem;
+        padding: 10px 30px;
+        color: #111;
+        background: #fff;
+
+        &:focus,
+        &:active {
+            top: 10px;
+        }
+    }
+}
