@@ -894,28 +894,79 @@ fieldset {
   font-size: 2.6rem;
   font-weight: 800;
 }
-#products .products_area .recommend_list {
+#products .products_area .products_list {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   padding-top: 20px;
 }
-#products .products_area .recommend_list .recommend_item {
+#products .products_area .products_list .products_item {
   width: 23%;
   flex: 0 0 auto;
   margin-right: 2.1%;
 }
-#products .products_area .recommend_list .recommend_item:last-child {
+#products .products_area .products_list .products_item:last-child {
   margin-right: 0;
 }
-#products .products_area .recommend_list .recommend_item .recommend_link {
+#products .products_area .products_list .products_item .products_link {
   width: 100%;
   display: block;
 }
-#products .products_area .recommend_list .recommend_item .recommend_link .recommend_item_img {
+#products .products_area .products_list .products_item .products_link .products_item_img img {
   width: 100%;
   border-radius: 15px;
+}
+#products .products_area .products_list .products_item .products_link .products_item_txt {
+  width: 100%;
+  padding: 10px 5px;
+}
+#products .products_area .products_list .products_item .products_link .products_item_txt .item_title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  word-break: break-all;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#products .products_area .products_list .products_item .products_link .products_item_txt .item_desc {
+  padding: 3px 0 5px;
+  font-size: 1.4rem;
+  color: #999;
+}
+#products .products_area .products_list .products_item .products_link .products_item_txt .item_price {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 0 5px;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+#products .products_area .products_list .products_item .products_link .products_item_txt .item_price .sale {
+  color: var(--accentCr);
+}
+#products .products_area .products_list .products_item .products_link .products_item_txt .item_price .price .won {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+#products .products_area .products_list .products_item .products_link .products_item_txt .item_price .origin {
+  text-decoration: line-through;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #999;
+}
+#products .products_area.best .more_btn {
+  width: 300px;
+  display: block;
+  padding: 15px 0;
+  margin: 30px auto 0;
+  border: 1px solid #999;
+  border-radius: 30px;
+  font-size: 1.6rem;
+  color: #999;
+}
+#products .products_area.best .more_btn .right_arrow {
+  padding-left: 5px;
 }
 
 #footer {
