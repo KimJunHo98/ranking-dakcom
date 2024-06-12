@@ -886,8 +886,8 @@ fieldset {
 }
 #products .products_area {
   width: 100%;
+  position: relative;
   padding-bottom: 100px;
-  overflow: hidden;
 }
 #products .products_area .products_title {
   text-align: center;
@@ -900,14 +900,15 @@ fieldset {
   flex-direction: row;
   flex-wrap: nowrap;
   padding-top: 20px;
+  overflow: hidden;
 }
 #products .products_area .products_list .products_item {
   width: 23%;
   flex: 0 0 auto;
-  margin-right: 2.1%;
+  margin: 0 1%;
 }
-#products .products_area .products_list .products_item:last-child {
-  margin-right: 0;
+#products .products_area .products_list .products_item.package_item {
+  width: 31.3333%;
 }
 #products .products_area .products_list .products_item .products_link {
   width: 100%;
@@ -955,18 +956,54 @@ fieldset {
   font-weight: 400;
   color: #999;
 }
-#products .products_area.best .more_btn {
+#products .products_area.best .more_btn, #products .products_area.sale .more_btn, #products .products_area.double .more_btn, #products .products_area.lookie .more_btn, #products .products_area.package .more_btn {
   width: 300px;
   display: block;
   padding: 15px 0;
   margin: 30px auto 0;
-  border: 1px solid #999;
+  border: 1px solid #ccc;
   border-radius: 30px;
   font-size: 1.6rem;
   color: #999;
 }
-#products .products_area.best .more_btn .right_arrow {
+#products .products_area.best .more_btn .right_arrow, #products .products_area.sale .more_btn .right_arrow, #products .products_area.double .more_btn .right_arrow, #products .products_area.lookie .more_btn .right_arrow, #products .products_area.package .more_btn .right_arrow {
   padding-left: 5px;
+}
+#products .products_area .qd_prev_btn,
+#products .products_area .qd_next_btn {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  top: 28%;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: all 0.2s ease;
+  font-size: 1.8rem;
+  background-color: #fff;
+}
+#products .products_area .qd_prev_btn:hover,
+#products .products_area .qd_next_btn:hover {
+  background-color: var(--mainCr);
+}
+#products .products_area .qd_prev_btn.invisible,
+#products .products_area .qd_next_btn.invisible {
+  opacity: 0.5;
+}
+#products .products_area .qd_prev_btn {
+  left: -24px;
+}
+#products .products_area .qd_next_btn {
+  right: -24px;
+}
+#products .event_banner {
+  width: 100%;
+  padding-bottom: 100px;
+}
+#products .event_banner .event_bn_img {
+  width: 100%;
+  border-radius: 15px;
 }
 
 #footer {

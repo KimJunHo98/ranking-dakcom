@@ -4,8 +4,8 @@
 
     .products_area {
         width: 100%;
+        position: relative;
         padding-bottom: 100px;
-        overflow: hidden;
 
         .products_title {
             text-align: center;
@@ -18,14 +18,15 @@
             flex-direction: row;
             flex-wrap: nowrap;
             padding-top: 20px;
+            overflow: hidden;
 
             .products_item {
                 width: 23%;
                 flex: 0 0 auto;
-                margin-right: 2.1%;
+                margin: 0 1%;
 
-                &:last-child {
-                    margin-right: 0;
+                &.package_item {
+                    width: 31.3333%;
                 }
                 .products_link {
                     width: 100%;
@@ -82,13 +83,17 @@
                 }
             }
         }
-        &.best {
+        &.best,
+        &.sale,
+        &.double,
+        &.lookie,
+        &.package {
             .more_btn {
                 width: 300px;
                 display: block;
                 padding: 15px 0;
                 margin: 30px auto 0;
-                border: 1px solid #999;
+                border: 1px solid #ccc;
                 border-radius: 30px;
                 font-size: 1.6rem;
                 color: #999;
@@ -97,6 +102,43 @@
                     padding-left: 5px;
                 }
             }
+        }
+        .qd_prev_btn,
+        .qd_next_btn {
+            width: 42px;
+            height: 42px;
+            position: absolute;
+            top: 28%;
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+            opacity: 1;
+            transition: all 0.2s ease;
+            font-size: 1.8rem;
+            background-color: #fff;
+
+            &:hover {
+                background-color: var(--mainCr);
+            }
+            &.invisible {
+                opacity: 0.5;
+            }
+        }
+        .qd_prev_btn {
+            left: -24px;
+        }
+        .qd_next_btn {
+            right: -24px;
+        }
+    }
+
+    .event_banner {
+        width: 100%;
+        padding-bottom: 100px;
+
+        .event_bn_img {
+            width: 100%;
+            border-radius: 15px;
         }
     }
 }
