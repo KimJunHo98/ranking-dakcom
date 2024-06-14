@@ -860,7 +860,7 @@ fieldset {
   width: 42px;
   height: 42px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translateY(-50%);
   padding: 10px;
   border-radius: 30px;
@@ -886,7 +886,6 @@ fieldset {
 }
 #products .products_area {
   width: 100%;
-  position: relative;
   padding-bottom: 100px;
 }
 #products .products_area .products_title {
@@ -894,31 +893,39 @@ fieldset {
   font-size: 2.6rem;
   font-weight: 800;
 }
-#products .products_area .products_list {
+#products .products_area .product_list_wrap {
+  width: 100%;
+  position: relative;
+  padding-top: 20px;
+}
+#products .products_area .product_list_wrap .product_list_inner {
+  width: 100%;
+  overflow: hidden;
+}
+#products .products_area .product_list_wrap .product_list_inner .products_list {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  padding-top: 20px;
   overflow: hidden;
 }
-#products .products_area .products_list .products_item {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item {
   width: 23%;
   flex: 0 0 auto;
   margin: 0 1%;
 }
-#products .products_area .products_list .products_item .products_link {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item .products_link {
   width: 100%;
   display: block;
 }
-#products .products_area .products_list .products_item .products_link .products_item_img img {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item .products_link .products_item_img img {
   border-radius: 15px;
 }
-#products .products_area .products_list .products_item .products_link .products_item_txt {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item .products_link .products_item_txt {
   width: 100%;
   padding: 10px 5px;
 }
-#products .products_area .products_list .products_item .products_link .products_item_txt .item_title {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item .products_link .products_item_txt .item_title {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -926,12 +933,12 @@ fieldset {
   font-size: 1.8rem;
   font-weight: 600;
 }
-#products .products_area .products_list .products_item .products_link .products_item_txt .item_desc {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item .products_link .products_item_txt .item_desc {
   padding: 3px 0 5px;
   font-size: 1.4rem;
   color: #999;
 }
-#products .products_area .products_list .products_item .products_link .products_item_txt .item_price {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item .products_link .products_item_txt .item_price {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -939,18 +946,46 @@ fieldset {
   font-size: 1.8rem;
   font-weight: 800;
 }
-#products .products_area .products_list .products_item .products_link .products_item_txt .item_price .sale {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item .products_link .products_item_txt .item_price .sale {
   color: var(--accentCr);
 }
-#products .products_area .products_list .products_item .products_link .products_item_txt .item_price .price .won {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item .products_link .products_item_txt .item_price .price .won {
   font-size: 1.4rem;
   font-weight: 400;
 }
-#products .products_area .products_list .products_item .products_link .products_item_txt .item_price .origin {
+#products .products_area .product_list_wrap .product_list_inner .products_list .products_item .products_link .products_item_txt .item_price .origin {
   text-decoration: line-through;
   font-size: 1.4rem;
   font-weight: 400;
   color: #999;
+}
+#products .products_area .product_list_wrap .qd_prev_btn,
+#products .products_area .product_list_wrap .qd_next_btn {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  top: 34%;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: all 0.2s ease;
+  font-size: 1.8rem;
+  background-color: #fff;
+}
+#products .products_area .product_list_wrap .qd_prev_btn:hover,
+#products .products_area .product_list_wrap .qd_next_btn:hover {
+  background-color: var(--mainCr);
+}
+#products .products_area .product_list_wrap .qd_prev_btn.invisible,
+#products .products_area .product_list_wrap .qd_next_btn.invisible {
+  opacity: 0.5;
+}
+#products .products_area .product_list_wrap .qd_prev_btn {
+  left: -15px;
+}
+#products .products_area .product_list_wrap .qd_next_btn {
+  right: -15px;
 }
 #products .products_area.best .more_btn, #products .products_area.sale .more_btn, #products .products_area.double .more_btn, #products .products_area.lookie .more_btn, #products .products_area.package .more_btn, #products .products_area.timesale .more_btn {
   width: 300px;
@@ -965,47 +1000,18 @@ fieldset {
 #products .products_area.best .more_btn .right_arrow, #products .products_area.sale .more_btn .right_arrow, #products .products_area.double .more_btn .right_arrow, #products .products_area.lookie .more_btn .right_arrow, #products .products_area.package .more_btn .right_arrow, #products .products_area.timesale .more_btn .right_arrow {
   padding-left: 5px;
 }
-#products .products_area .qd_prev_btn,
-#products .products_area .qd_next_btn {
-  width: 42px;
-  height: 42px;
-  position: absolute;
-  top: 28%;
-  padding: 10px;
-  border-radius: 30px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transition: all 0.2s ease;
-  font-size: 1.8rem;
-  background-color: #fff;
-}
-#products .products_area .qd_prev_btn:hover,
-#products .products_area .qd_next_btn:hover {
-  background-color: var(--mainCr);
-}
-#products .products_area .qd_prev_btn.invisible,
-#products .products_area .qd_next_btn.invisible {
-  opacity: 0.5;
-}
-#products .products_area .qd_prev_btn {
-  left: -20px;
-}
-#products .products_area .qd_next_btn {
-  right: -20px;
-}
-#products .products_area.package .package_list .package_item {
+#products .products_area.package .product_list_wrap .product_list_inner .package_list .package_item {
   width: 31.3%;
 }
-#products .products_area.package .qd_prev_btn,
-#products .products_area.package .qd_next_btn {
-  top: 30%;
+#products .products_area.package .product_list_wrap .qd_prev_btn,
+#products .products_area.package .product_list_wrap .qd_next_btn {
+  top: 38%;
 }
 #products .products_area.timesale {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  position: relative;
 }
 #products .products_area.timesale .timesale_tit_area {
   width: 35%;
@@ -1021,11 +1027,9 @@ fieldset {
 }
 #products .products_area.timesale .timesale_tit_area .timesale_title .time {
   display: block;
-}
-#products .products_area.timesale .timesale_tit_area .timesale_title .time .ico_clock {
-  padding-right: 10px;
-  font-size: 2.6rem;
-  color: var(--mainCr);
+  padding-left: 36px;
+  background: url("../../images/ico_timesale.png") no-repeat;
+  background-size: contain;
 }
 #products .products_area.timesale .timesale_tit_area .tit_desc {
   font-size: 1.6rem;
@@ -1033,34 +1037,38 @@ fieldset {
 }
 #products .products_area.timesale .timesale_list_wrap {
   width: 65%;
+  position: relative;
+}
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner {
+  width: 100%;
   overflow: hidden;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list {
   width: 100%;
   display: flex;
   flex-direction: row;
-  transition: transform 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item {
   width: 46%;
   flex: 0 0 auto;
   margin-right: 8%;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item:last-child {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item:last-child {
   margin-right: 0;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link {
   width: 100%;
   display: block;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_img {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_img {
   width: 100%;
   position: relative;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_img img {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_img img {
   border-radius: 15px 15px 0 0;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_img .timer {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_img .timer {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1074,21 +1082,21 @@ fieldset {
   background-color: var(--accentCr);
   color: #fff;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_img .timer span {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_img .timer span {
   font-weight: 600;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_img .timer span.day .ico_clock {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_img .timer span.day .ico_clock {
   padding-right: 5px;
   font-size: 1.6rem;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_txt {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_txt {
   margin-top: 50px;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_title {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_title {
   font-size: 1.6rem;
   font-weight: 400;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_price {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_price {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -1097,29 +1105,45 @@ fieldset {
   font-size: 1.8rem;
   font-weight: 800;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_price .sale {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_price .sale {
   color: var(--accentCr);
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_price .price .won {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_price .price .won {
   font-size: 1.4rem;
   font-weight: 400;
 }
-#products .products_area.timesale .timesale_list_wrap .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_price .origin {
+#products .products_area.timesale .timesale_list_wrap .timesale_list_inner .timesale_list .timesale_item .timesale_link .timesale_item_txt .item_price .origin {
   text-decoration: line-through;
   font-size: 1.4rem;
   font-weight: 400;
   color: #999;
 }
-#products .products_area.timesale .qd_prev_btn,
-#products .products_area.timesale .qd_next_btn {
+#products .products_area.timesale .timesale_list_wrap .qd_prev_btn,
+#products .products_area.timesale .timesale_list_wrap .qd_next_btn {
+  width: 42px;
+  height: 42px;
   position: absolute;
-  top: 22%;
+  top: 28%;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: all 0.2s ease;
+  font-size: 1.8rem;
+  background-color: #fff;
 }
-#products .products_area.timesale .qd_prev_btn {
-  left: 35%;
-  transform: translateX(-50%);
+#products .products_area.timesale .timesale_list_wrap .qd_prev_btn:hover,
+#products .products_area.timesale .timesale_list_wrap .qd_next_btn:hover {
+  background-color: var(--mainCr);
 }
-#products .products_area.timesale .qd_next_btn {
+#products .products_area.timesale .timesale_list_wrap .qd_prev_btn.invisible,
+#products .products_area.timesale .timesale_list_wrap .qd_next_btn.invisible {
+  opacity: 0.5;
+}
+#products .products_area.timesale .timesale_list_wrap .qd_prev_btn {
+  left: -24px;
+}
+#products .products_area.timesale .timesale_list_wrap .qd_next_btn {
   right: -24px;
 }
 #products .event_banner {

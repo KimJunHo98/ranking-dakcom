@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
     productsList.forEach((list) => {
         const packageList = list.querySelector(".package_list");
         const items = list.querySelectorAll(".products_item"); // productsList 내에서 .products_item의 모든 요소
-        const prevBtn = list.parentElement.querySelector(".qd_prev_btn"); // productsList 부모요소 내에 .qd_prev_btn 요소
-        const nextBtn = list.parentElement.querySelector(".qd_next_btn"); // productsList 부모요소 내에 .qd_next_btn 요소
+        const prevBtn = list.closest(".product_list_wrap").querySelector(".qd_prev_btn"); // productsList 부모요소의 형제요소 (.qd_prev_btn)
+        const nextBtn = list.closest(".product_list_wrap").querySelector(".qd_next_btn"); // productsList 부모요소의 형제요소 (.qd_next_btn)
         const itemWidth = items[0].offsetWidth;
         const gap = 23.3;
 
