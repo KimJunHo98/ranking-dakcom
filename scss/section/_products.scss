@@ -25,16 +25,12 @@
                 flex: 0 0 auto;
                 margin: 0 1%;
 
-                &.package_item {
-                    width: 31.3333%;
-                }
                 .products_link {
                     width: 100%;
                     display: block;
 
                     .products_item_img {
                         img {
-                            width: 100%;
                             border-radius: 15px;
                         }
                     }
@@ -87,7 +83,8 @@
         &.sale,
         &.double,
         &.lookie,
-        &.package {
+        &.package,
+        &.timesale {
             .more_btn {
                 width: 300px;
                 display: block;
@@ -125,10 +122,160 @@
             }
         }
         .qd_prev_btn {
-            left: -24px;
+            left: -20px;
         }
         .qd_next_btn {
-            right: -24px;
+            right: -20px;
+        }
+        &.package {
+            .package_list {
+                .package_item {
+                    width: 31.3%;
+                }
+            }
+            .qd_prev_btn,
+            .qd_next_btn {
+                top: 30%;
+            }
+        }
+        &.timesale {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            position: relative;
+
+            .timesale_tit_area {
+                width: 35%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .timesale_title {
+                    width: 100%;
+                    margin-bottom: 30px;
+                    font-size: 2.8rem;
+                    font-weight: 600;
+
+                    .time {
+                        display: block;
+
+                        .ico_clock {
+                            padding-right: 10px;
+                            font-size: 2.6rem;
+                            color: var(--mainCr);
+                        }
+                    }
+                }
+                .tit_desc {
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                }
+            }
+            .timesale_list_wrap {
+                width: 65%;
+                overflow: hidden;
+
+                .timesale_list {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    transition: transform 0.5s ease-in-out;
+
+                    .timesale_item {
+                        width: 46%;
+                        flex: 0 0 auto;
+                        margin-right: 8%;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        .timesale_link {
+                            width: 100%;
+                            display: block;
+
+                            .timesale_item_img {
+                                width: 100%;
+                                position: relative;
+
+                                img {
+                                    border-radius: 15px 15px 0 0;
+                                }
+                                .timer {
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: 0 5px;
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: -32px;
+                                    padding: 8px 0;
+                                    border-radius: 0 0 15px 15px;
+                                    font-size: 1.8rem;
+                                    background-color: var(--accentCr);
+                                    color: #fff;
+
+                                    span {
+                                        font-weight: 600;
+
+                                        &.day {
+                                            .ico_clock {
+                                                padding-right: 5px;
+                                                font-size: 1.6rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .timesale_item_txt {
+                                margin-top: 50px;
+
+                                .item_title {
+                                    font-size: 1.6rem;
+                                    font-weight: 400;
+                                }
+                                .item_price {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: flex-end;
+                                    gap: 0 5px;
+                                    margin-top: 5px;
+                                    font-size: 1.8rem;
+                                    font-weight: 800;
+
+                                    .sale {
+                                        color: var(--accentCr);
+                                    }
+                                    .price {
+                                        .won {
+                                            font-size: 1.4rem;
+                                            font-weight: 400;
+                                        }
+                                    }
+                                    .origin {
+                                        text-decoration: line-through;
+                                        font-size: 1.4rem;
+                                        font-weight: 400;
+                                        color: #999;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .qd_prev_btn,
+            .qd_next_btn {
+                position: absolute;
+                top: 22%;
+            }
+            .qd_prev_btn {
+                left: 35%;
+                transform: translateX(-50%);
+            }
+            .qd_next_btn {
+                right: -24px;
+            }
         }
     }
 

@@ -13,12 +13,20 @@ const qmPrevBtn = document.querySelector(".qm_prev_btn");
 const qmNextBtn = document.querySelector(".qm_next_btn");
 // 상품
 const productsList = document.querySelectorAll(".products_list");
+// 타임세일
+const timeSale = document.querySelector(".timesale_list");
+const tsSlideItem = document.querySelectorAll(".timesale_item");
+const tsPrevBtn = document.querySelector(".ts_prev_btn");
+const tsNextBtn = document.querySelector(".ts_next_btn");
 
-let currentIndex = 0;
+let currentIndex1 = 0;
+let currentIndex2 = 0;
 let slideInterval;
+let tsSlideInterval;
 
 document.addEventListener("DOMContentLoaded", () => {
     const totalItems = slideItem.length; // 캐러셀 전체 아이템 수
+    const totalTsItems = tsSlideItem.length;
 
     showCount.innerHTML = `1 / <em class="total">${totalItems}</em>`; // 현재 카운트 표시
 
@@ -26,26 +34,26 @@ document.addEventListener("DOMContentLoaded", () => {
     // 슬라이드 업데이트 함수
     function updateSlide() {
         const itemWidth = slideItem[0].clientWidth; // 아이템의 너비를 계산
-        const offset = -currentIndex * itemWidth;
+        const offset = -currentIndex1 * itemWidth;
         carousel.style.transform = `translateX(${offset}px)`;
     }
     // 다음 슬라이드 함수
     function handleClickNextSlide() {
-        currentIndex = (currentIndex + 1) % totalItems;
-        showCount.innerHTML = `${currentIndex + 1} / <em class="total">${totalItems}</em>`;
+        currentIndex1 = (currentIndex1 + 1) % totalItems;
+        showCount.innerHTML = `${currentIndex1 + 1} / <em class="total">${totalItems}</em>`;
         updateSlide();
     }
     // 이전 슬라이드 함수
     function handleClickPrevSlide() {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        showCount.innerHTML = `${currentIndex + 1} / <em class="total">${totalItems}</em>`;
+        currentIndex1 = (currentIndex1 - 1 + totalItems) % totalItems;
+        showCount.innerHTML = `${currentIndex1 + 1} / <em class="total">${totalItems}</em>`;
         updateSlide();
     }
     // 자동 슬라이드 시작 함수
     function startAutoSlide() {
         slideInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalItems;
-            showCount.innerHTML = `${currentIndex + 1} / <em class="total">${totalItems}</em>`;
+            currentIndex1 = (currentIndex1 + 1) % totalItems;
+            showCount.innerHTML = `${currentIndex1 + 1} / <em class="total">${totalItems}</em>`;
             updateSlide();
         }, 4000); // 4초마다 슬라이드 변경
     }
@@ -60,10 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
         playBtn.style.display = "block";
         pauseBtn.style.display = "none";
         clearInterval(slideInterval);
-    }
-    // 리사이즈 함수
-    function handleResize() {
-        updateSlide(); // 슬라이드 위치를 업데이트하여 반응형을 유지
     }
 
     /* 퀵메뉴 슬라이드 함수 */
@@ -98,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // 다음 버튼
-            if (scrollLeft >= maxScrollLeft - 1) {
+            if (scrollLeft >= maxScrollLeft) {
                 nextBtn.classList.add("invisible");
             } else {
                 nextBtn.classList.remove("invisible");
@@ -127,8 +131,59 @@ document.addEventListener("DOMContentLoaded", () => {
         list.addEventListener("scroll", updateButtonState);
     });
 
+    /* 타임세일 슬라이드 함수 */
+    // 슬라이드 업데이트 함수
+    function updateTsSlide() {
+        const itemWidth = tsSlideItem[0].clientWidth;
+        const computedStyle = window.getComputedStyle(tsSlideItem[0]);
+        const gap = parseFloat(computedStyle.marginRight);
+        const offset = -currentIndex2 * (itemWidth + gap);
+
+        timeSale.style.transform = `translateX(${offset}px)`;
+    }
+    // 다음 슬라이드 함수
+    function handleClickNextTsSlide() {
+        if (currentIndex2 < totalTsItems - 2) {
+            currentIndex2++;
+        } else {
+            currentIndex2 = 0;
+        }
+
+        updateTsSlide();
+    }
+    // 이전 슬라이드 함수
+    function handleClickPrevTsSlide() {
+        if (currentIndex2 > 0) {
+            currentIndex2--;
+        } else {
+            currentIndex2 = totalTsItems - 2;
+        }
+
+        updateTsSlide();
+    }
+    // 자동 슬라이드 시작 함수
+    function startTsAutoSlide() {
+        tsSlideInterval = setInterval(() => {
+            if (currentIndex2 < totalTsItems - 2) {
+                currentIndex2++;
+            } else {
+                currentIndex2 = 0;
+            }
+
+            updateTsSlide();
+        }, 4000); // 4초마다 슬라이드 변경
+    }
+
+    // 리사이즈 함수
+    function handleResize() {
+        // 슬라이드 위치를 업데이트하여 반응형을 유지
+        updateSlide();
+        updateTsSlide();
+    }
+
     // 페이지 로드 시 자동 슬라이드 시작
     startAutoSlide();
+    startTsAutoSlide();
 
     window.addEventListener("resize", handleResize);
     prevBtn.addEventListener("click", handleClickPrevSlide);
@@ -137,4 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pauseBtn.addEventListener("click", handleClickStopSlide);
     qmPrevBtn.addEventListener("click", handleClickQmPrevSlide);
     qmNextBtn.addEventListener("click", handleClickQmNextSlide);
+    tsPrevBtn.addEventListener("click", handleClickPrevTsSlide);
+    tsNextBtn.addEventListener("click", handleClickNextTsSlide);
 });
