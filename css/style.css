@@ -1136,6 +1136,11 @@ fieldset {
 @media all and (min-width: 481px) and (max-width: 768px) {
   #quickMenu .quick_menu_wrap .quick_menu_container {
     width: 650px;
+    overflow: hidden;
+  }
+  #quickMenu .quick_menu_wrap .quick_menu_container .quick_menu_list {
+    overflow: visible;
+    transition-duration: 0.1s;
   }
   #quickMenu .quick_menu_wrap .quick_menu_container .qm_prev_btn, #quickMenu .quick_menu_wrap .quick_menu_container .qm_next_btn {
     display: none;

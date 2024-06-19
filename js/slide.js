@@ -21,8 +21,9 @@ const tsNextBtn = document.querySelector(".ts_next_btn");
 
 let currentIndex1 = 0;
 let currentIndex2 = 0;
-let touchStartX = 0;
-let touchMoveX = 0;
+let startX = 0;
+let currentTranslate = 0;
+let isDragging = false;
 let slideInterval;
 let tsSlideInterval;
 
@@ -90,27 +91,34 @@ document.addEventListener("DOMContentLoaded", () => {
     // 모바일 및 태블릿 디바이스인 경우에만 터치 이벤트 활성화
     if (enableTouchEvents()) {
         // 터치 시작
-        function handleTouchQmStart(e) {
-            touchStartX = e.touches[0].clientX;
-            touchMoveX = touchStartX;
+        function touchStart(e) {
+            startX = e.touches[0].clientX;
+            isDragging = true;
         }
-        // 터치 이동
-        function handleTouchQmMove(e) {
+
+        // 터치 스크롤
+        function touchMove(e) {
             e.preventDefault();
 
-            touchMoveX = e.touches[0].clientX;
-        }
-        // 터치 종료
-        function handleTouchQmEnd() {
-            const moveDistance = touchStartX - touchMoveX;
+            if (!isDragging) return;
 
-            if (moveDistance > 100) {
-                // 터치를 왼쪽으로 이동
-                handleClickQmNextSlide();
-            } else if (moveDistance < -100) {
-                // 터치를 오른쪽으로 이동
-                handleClickQmPrevSlide();
-            }
+            const currentPosition = e.touches[0].clientX;
+            const diff = currentPosition - startX;
+
+            // 현재 translate 값에 diff를 더하여 이동
+            const newTranslate = currentTranslate + diff;
+            quickMenuList.style.transform = `translateX(${newTranslate}px)`;
+        }
+
+        // 터치 종료
+        function touchEnd(e) {
+            isDragging = false;
+            currentTranslate += e.changedTouches[0].clientX - startX;
+        }
+
+        // 터치 취소
+        function touchCancel() {
+            isDragging = false;
         }
     }
 
@@ -228,7 +236,8 @@ document.addEventListener("DOMContentLoaded", () => {
     qmNextBtn.addEventListener("click", handleClickQmNextSlide);
     tsPrevBtn.addEventListener("click", handleClickPrevTsSlide);
     tsNextBtn.addEventListener("click", handleClickNextTsSlide);
-    quickMenuList.addEventListener("touchstart", handleTouchQmStart);
-    quickMenuList.addEventListener('touchend', handleTouchQmEnd);
-    quickMenuList.addEventListener("touchmove", handleTouchQmMove);
+    quickMenuList.addEventListener("touchstart", touchStart);
+    quickMenuList.addEventListener("touchmove", touchMove);
+    quickMenuList.addEventListener("touchend", touchEnd);
+    quickMenuList.addEventListener("touchcancel", touchCancel);
 });
