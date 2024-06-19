@@ -29,7 +29,7 @@
             border-radius: 30px;
             font-size: 1.4rem;
             color: #fff;
-            background-color: rgba(0, 0, 0, .5);
+            background-color: rgba(0, 0, 0, 0.5);
 
             .carousel_control_btns {
                 padding: 0 6px;
@@ -40,6 +40,32 @@
             }
             .play {
                 display: none;
+            }
+        }
+    }
+
+    // 미디어쿼리
+    @include tablet {
+        .visual_inner {
+            .carousel_item {
+                .visual_img {
+                    height: 270px;
+                }
+            }
+            .carousel_control_cotainer {
+                right: 50px;
+            }
+        }
+    }
+    @include mobile {
+        .visual_inner {
+            .carousel_item {
+                .visual_img {
+                    height: 270px;
+                }
+            }
+            .carousel_control_cotainer {
+                right: 50px;
             }
         }
     }

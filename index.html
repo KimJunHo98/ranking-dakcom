@@ -68,6 +68,7 @@
                 <h2 class="blind">헤더</h2>
                 <div class="container">
                     <div class="inner">
+                        <!-- pc header -->
                         <div class="header">
                             <div class="header_top">
                                 <h1 class="main_logo">
@@ -121,6 +122,44 @@
                                     </li>
                                 </ul>
                             </div>
+                        </div>
+                        <!-- mobile header -->
+                        <div class="mb_header">
+                            <div class="mb_menu_btn_area">
+                                <button type="button" class="mb_menu_btn">
+                                    <span class="menu_bars">
+                                        <em class="bar"></em>
+                                    </span>
+                                </button>
+                            </div>
+                            <h1 class="main_logo">
+                                <a href="/" class="logo_link mb_logo_link">
+                                    <img src="images/logo.png" alt="랭킹닭컴" loading="lazy" class="main_logo_img" />
+                                </a>
+                            </h1>
+                            <ul class="my_menu">
+                                <li class="menu_list">
+                                    <a href="javascript:;" class="menu_link menu_link1">
+                                        <span class="blind">검색</span>
+                                    </a>
+                                </li>
+                                <li class="menu_list">
+                                    <a href="javascript:;" class="menu_link menu_link2">
+                                        <span class="blind">마이페이지</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- <form method="get" class="search_form mb_search_form">
+                                <label for="search_input" class="blind">검색창</label>
+                                <input
+                                    type="text"
+                                    id="search_input"
+                                    class="search_input"
+                                    name="search_input"
+                                    placeholder="최저가 닭가슴살 구매!"
+                                />
+                                <button type="button" class="search_btn"><span class="blind">검색</span></button>
+                            </form> -->
                         </div>
                     </div>
                 </div>
@@ -549,120 +588,122 @@
                     <h2 class="blind">퀵메뉴</h2>
                     <div class="container">
                         <div class="inner">
-                            <div class="quick_menu">
-                                <ul class="quick_menu_list">
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link1"
-                                            ><span class="bg_ico"></span><em class="qm_txt">신상품</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link2"
-                                            ><span class="bg_ico"></span><em class="qm_txt">닭가슴살</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link3"
-                                            ><span class="bg_ico"></span><em class="qm_txt">도시락·볶음밥</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link4"
-                                            ><span class="bg_ico"></span><em class="qm_txt">음료·차·프로틴</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link5"
-                                            ><span class="bg_ico"></span><em class="qm_txt">즉석 간편식</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link6"
-                                            ><span class="bg_ico"></span><em class="qm_txt">소고기</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link7"
-                                            ><span class="bg_ico"></span><em class="qm_txt">견과·고구마·감자</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link8"
-                                            ><span class="bg_ico"></span><em class="qm_txt">샐러드·과일</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link9"
-                                            ><span class="bg_ico"></span><em class="qm_txt">계란·난백·콩</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link10"
-                                            ><span class="bg_ico"></span><em class="qm_txt">닭안심살</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link11"
-                                            ><span class="bg_ico"></span><em class="qm_txt">과자·간식·떡</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link12"
-                                            ><span class="bg_ico"></span><em class="qm_txt">수산·해산</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link13"
-                                            ><span class="bg_ico"></span><em class="qm_txt">베이커리·치즈</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link14"
-                                            ><span class="bg_ico"></span><em class="qm_txt">돼지·오리고기</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link15"
-                                            ><span class="bg_ico"></span><em class="qm_txt">식단·패키지</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link16"
-                                            ><span class="bg_ico"></span><em class="qm_txt">소스·오일</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link17"
-                                            ><span class="bg_ico"></span><em class="qm_txt">반찬·밀키트·안주</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link18"
-                                            ><span class="bg_ico"></span><em class="qm_txt">펫푸드</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link19"
-                                            ><span class="bg_ico"></span><em class="qm_txt">건강식품</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link20"
-                                            ><span class="bg_ico"></span><em class="qm_txt">운동·생활용품</em></a
-                                        >
-                                    </li>
-                                    <li class="quick_menu_item">
-                                        <a href="javascript:;" class="quick_menu_link quick_menu_link21"
-                                            ><span class="bg_ico"></span><em class="qm_txt">채식식단</em></a
-                                        >
-                                    </li>
-                                </ul>
-                                <button type="button" class="qm_prev_btn">
-                                    <span class="blind">이전</span><i class="fa-solid fa-angle-left"></i>
-                                </button>
-                                <button type="button" class="qm_next_btn">
-                                    <span class="blind">다음</span><i class="fa-solid fa-angle-right"></i>
-                                </button>
+                            <div class="quick_menu_wrap">
+                                <div class="quick_menu_container">
+                                    <ul class="quick_menu_list">
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link1"
+                                                ><span class="bg_ico"></span><em class="qm_txt">신상품</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link2"
+                                                ><span class="bg_ico"></span><em class="qm_txt">닭가슴살</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link3"
+                                                ><span class="bg_ico"></span><em class="qm_txt">도시락·볶음밥</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link4"
+                                                ><span class="bg_ico"></span><em class="qm_txt">음료·차·프로틴</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link5"
+                                                ><span class="bg_ico"></span><em class="qm_txt">즉석 간편식</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link6"
+                                                ><span class="bg_ico"></span><em class="qm_txt">소고기</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link7"
+                                                ><span class="bg_ico"></span><em class="qm_txt">견과·고구마·감자</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link8"
+                                                ><span class="bg_ico"></span><em class="qm_txt">샐러드·과일</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link9"
+                                                ><span class="bg_ico"></span><em class="qm_txt">계란·난백·콩</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link10"
+                                                ><span class="bg_ico"></span><em class="qm_txt">닭안심살</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link11"
+                                                ><span class="bg_ico"></span><em class="qm_txt">과자·간식·떡</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link12"
+                                                ><span class="bg_ico"></span><em class="qm_txt">수산·해산</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link13"
+                                                ><span class="bg_ico"></span><em class="qm_txt">베이커리·치즈</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link14"
+                                                ><span class="bg_ico"></span><em class="qm_txt">돼지·오리고기</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link15"
+                                                ><span class="bg_ico"></span><em class="qm_txt">식단·패키지</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link16"
+                                                ><span class="bg_ico"></span><em class="qm_txt">소스·오일</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link17"
+                                                ><span class="bg_ico"></span><em class="qm_txt">반찬·밀키트·안주</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link18"
+                                                ><span class="bg_ico"></span><em class="qm_txt">펫푸드</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link19"
+                                                ><span class="bg_ico"></span><em class="qm_txt">건강식품</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link20"
+                                                ><span class="bg_ico"></span><em class="qm_txt">운동·생활용품</em></a
+                                            >
+                                        </li>
+                                        <li class="quick_menu_item">
+                                            <a href="javascript:;" class="quick_menu_link quick_menu_link21"
+                                                ><span class="bg_ico"></span><em class="qm_txt">채식식단</em></a
+                                            >
+                                        </li>
+                                    </ul>
+                                    <button type="button" class="qm_prev_btn">
+                                        <span class="blind">이전</span><i class="fa-solid fa-angle-left"></i>
+                                    </button>
+                                    <button type="button" class="qm_next_btn">
+                                        <span class="blind">다음</span><i class="fa-solid fa-angle-right"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -4174,7 +4215,7 @@
                 </section>
             </main>
             <!-- footer -->
-            <footer id="footer">
+            <!-- <footer id="footer">
                 <h2 class="blind">푸터</h2>
                 <div class="footer_top">
                     <div class="footer_menu">
@@ -4294,7 +4335,7 @@
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> -->
         </div>
 
         <!-- script -->

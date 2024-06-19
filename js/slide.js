@@ -21,6 +21,8 @@ const tsNextBtn = document.querySelector(".ts_next_btn");
 
 let currentIndex1 = 0;
 let currentIndex2 = 0;
+let touchStartX = 0;
+let touchMoveX = 0;
 let slideInterval;
 let tsSlideInterval;
 
@@ -70,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(slideInterval);
     }
 
-    /* 퀵메뉴 슬라이드 함수 */
+    /* pc 퀵메뉴 슬라이드 함수 */
     // 이전 퀵메뉴 슬라이드
     function handleClickQmPrevSlide() {
         quickMenuList.scrollBy({ left: -300, behavior: "smooth" });
@@ -78,6 +80,38 @@ document.addEventListener("DOMContentLoaded", () => {
     // 다음 퀵메뉴 슬라이드
     function handleClickQmNextSlide() {
         quickMenuList.scrollBy({ left: 300, behavior: "smooth" });
+    }
+
+    /* mobile 퀵메뉴 슬라이드 함수 */
+    function enableTouchEvents() {
+        return window.matchMedia("(max-width: 768px)").matches; // 768px 이하의 너비에서만 터치 이벤트 활성화
+    }
+
+    // 모바일 및 태블릿 디바이스인 경우에만 터치 이벤트 활성화
+    if (enableTouchEvents()) {
+        // 터치 시작
+        function handleTouchQmStart(e) {
+            touchStartX = e.touches[0].clientX;
+            touchMoveX = touchStartX;
+        }
+        // 터치 이동
+        function handleTouchQmMove(e) {
+            e.preventDefault();
+
+            touchMoveX = e.touches[0].clientX;
+        }
+        // 터치 종료
+        function handleTouchQmEnd() {
+            const moveDistance = touchStartX - touchMoveX;
+
+            if (moveDistance > 100) {
+                // 터치를 왼쪽으로 이동
+                handleClickQmNextSlide();
+            } else if (moveDistance < -100) {
+                // 터치를 오른쪽으로 이동
+                handleClickQmPrevSlide();
+            }
+        }
     }
 
     /* 상품 슬라이드 함수 */
@@ -194,4 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
     qmNextBtn.addEventListener("click", handleClickQmNextSlide);
     tsPrevBtn.addEventListener("click", handleClickPrevTsSlide);
     tsNextBtn.addEventListener("click", handleClickNextTsSlide);
+    quickMenuList.addEventListener("touchstart", handleTouchQmStart);
+    quickMenuList.addEventListener('touchend', handleTouchQmEnd);
+    quickMenuList.addEventListener("touchmove", handleTouchQmMove);
 });
