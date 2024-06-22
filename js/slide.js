@@ -26,6 +26,8 @@ let currentTranslate = 0;
 let isDragging = false;
 let slideInterval;
 let tsSlideInterval;
+let itemWidth = quickMenuItem[0].offsetWidth;
+let maxTranslate = quickMenuList.clientWidth - itemWidth * 21;
 
 document.addEventListener("DOMContentLoaded", () => {
     const totalItems = slideItem.length; // 캐러셀 전체 아이템 수
@@ -84,41 +86,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* mobile 퀵메뉴 슬라이드 함수 */
+    // 768px 이하의 너비에서만 터치 이벤트 활성화
     function enableTouchEvents() {
-        return window.matchMedia("(max-width: 768px)").matches; // 768px 이하의 너비에서만 터치 이벤트 활성화
+        return window.matchMedia("(max-width: 768px)").matches;
     }
 
-    // 모바일 및 태블릿 디바이스인 경우에만 터치 이벤트 활성화
+    // 터치 이벤트 활성화
     if (enableTouchEvents()) {
-        // 터치 시작
         function touchStart(e) {
             startX = e.touches[0].clientX;
             isDragging = true;
         }
 
-        // 터치 스크롤
         function touchMove(e) {
             e.preventDefault();
-
             if (!isDragging) return;
 
             const currentPosition = e.touches[0].clientX;
             const diff = currentPosition - startX;
+            let newTranslate = currentTranslate + diff;
 
-            // 현재 translate 값에 diff를 더하여 이동
-            const newTranslate = currentTranslate + diff;
+            // 스크롤이 처음 아이템과 마지막 아이템을 넘지 않도록 제한
+            if (newTranslate > 0) {
+                newTranslate = 0;
+            } else if (newTranslate < maxTranslate) {
+                newTranslate = maxTranslate;
+            }
+
             quickMenuList.style.transform = `translateX(${newTranslate}px)`;
         }
 
-        // 터치 종료
-        function touchEnd(e) {
+        function touchEnd() {
             isDragging = false;
-            currentTranslate += e.changedTouches[0].clientX - startX;
-        }
-
-        // 터치 취소
-        function touchCancel() {
-            isDragging = false;
+            currentTranslate = parseFloat(quickMenuList.style.transform.match(/-?\d+/)[0]);
         }
     }
 
@@ -239,5 +239,4 @@ document.addEventListener("DOMContentLoaded", () => {
     quickMenuList.addEventListener("touchstart", touchStart);
     quickMenuList.addEventListener("touchmove", touchMove);
     quickMenuList.addEventListener("touchend", touchEnd);
-    quickMenuList.addEventListener("touchcancel", touchCancel);
 });
