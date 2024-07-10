@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(slideInterval);
     }
 
-    /* pc 퀵메뉴 슬라이드 함수 */
+    /* 퀵메뉴 슬라이드 함수 */
     // 이전 퀵메뉴 슬라이드
     function handleClickQmPrevSlide() {
         quickMenuList.scrollBy({ left: -300, behavior: "smooth" });
@@ -83,43 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // 다음 퀵메뉴 슬라이드
     function handleClickQmNextSlide() {
         quickMenuList.scrollBy({ left: 300, behavior: "smooth" });
-    }
-
-    /* mobile 퀵메뉴 슬라이드 함수 */
-    // 768px 이하의 너비에서만 터치 이벤트 활성화
-    function enableTouchEvents() {
-        return window.matchMedia("(max-width: 768px)").matches;
-    }
-
-    // 터치 이벤트 활성화
-    if (enableTouchEvents()) {
-        function touchStart(e) {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-        }
-
-        function touchMove(e) {
-            e.preventDefault();
-            if (!isDragging) return;
-
-            const currentPosition = e.touches[0].clientX;
-            const diff = currentPosition - startX;
-            let newTranslate = currentTranslate + diff;
-
-            // 스크롤이 처음 아이템과 마지막 아이템을 넘지 않도록 제한
-            if (newTranslate > 0) {
-                newTranslate = 0;
-            } else if (newTranslate < maxTranslate) {
-                newTranslate = maxTranslate;
-            }
-
-            quickMenuList.style.transform = `translateX(${newTranslate}px)`;
-        }
-
-        function touchEnd() {
-            isDragging = false;
-            currentTranslate = parseFloat(quickMenuList.style.transform.match(/-?\d+/)[0]);
-        }
     }
 
     /* 상품 슬라이드 함수 */
@@ -236,7 +199,4 @@ document.addEventListener("DOMContentLoaded", () => {
     qmNextBtn.addEventListener("click", handleClickQmNextSlide);
     tsPrevBtn.addEventListener("click", handleClickPrevTsSlide);
     tsNextBtn.addEventListener("click", handleClickNextTsSlide);
-    quickMenuList.addEventListener("touchstart", touchStart);
-    quickMenuList.addEventListener("touchmove", touchMove);
-    quickMenuList.addEventListener("touchend", touchEnd);
 });

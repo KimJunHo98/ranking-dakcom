@@ -9,10 +9,19 @@
     border-right: 1px solid #eee;
     background-color: #fff;
 
+    @media all and (max-width: 1000px) {
+        top: 177px;
+        border-top: 1px solid #eee;
+    }
+
     &.fixed {
         height: calc(100vh - 54px);
         position: fixed;
         top: 54px;
+
+        @media all and (max-width: 1000px) {
+            top: 50px;
+        }
 
         .side_menu_nav {
             .side_menu_list {

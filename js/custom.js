@@ -6,7 +6,8 @@ const sideMenuBtn = document.querySelector(".side_menu_btn");
 const sideMenuLink = document.querySelector(".side_menu_link");
 const sideMenuDepth = document.querySelector(".side_menu_depth");
 // 사이드 퀵메뉴
-const sideQm = document.getElementById("sideQuickMenu");
+const sideQmWrap = document.querySelector(".side_Qm_wrap");
+const showBtn = document.querySelector(".show_btn");
 const topBtn = document.querySelector(".top");
 // 푸터
 const selectMenu = document.querySelector(".select_menu");
@@ -50,36 +51,32 @@ function pageScrollBlock() {
     body.style.overflow = "auto";
 }
 
-// 사이드 퀵메뉴
-function sideQmPosition(){
-    const scrollTop = window.scrollY;
-    // const offSetTop = headerGnb.offsetTop;
-
-    if(scrollTop >= 300){
-        sideQm.classList.add("fixed");
-    }else{
-        sideQm.classList.remove("fixed");
-    }
-}
+// 푸터 패밀리사이트
 function handleClickFmBtn() {
     selectMenu.classList.toggle("active");
     upIco.classList.toggle("rotate");
 }
 
+// 사이드 퀵메뉴
+// 퀵메뉴 더보기
+function handleClickShowBtn() {
+    sideQmWrap.classList.toggle("show");
+    showBtn.classList.toggle("active");
+}
 // 상단 이동
-function handleClickTopBtn(){
+function handleClickTopBtn() {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
     });
 }
 
 window.addEventListener("scroll", scrollStickyHeader);
-window.addEventListener("scroll", sideQmPosition);
 fmBtn.addEventListener("click", handleClickFmBtn);
 sideMenuBtn.addEventListener("click", handleEnterSideMenu);
 sideMenu.addEventListener("pointerenter", pageScrollNone);
 sideMenu.addEventListener("pointerleave", pageScrollBlock);
 sideMenuDepth.addEventListener("pointerenter", handleEnterSideMenuDepth);
 sideMenuDepth.addEventListener("pointerleave", handleLeaveSideMenuDepth);
+showBtn.addEventListener("click", handleClickShowBtn);
 topBtn.addEventListener("click", handleClickTopBtn);

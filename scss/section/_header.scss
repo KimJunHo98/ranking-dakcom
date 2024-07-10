@@ -1,6 +1,7 @@
 #header {
     width: 100%;
     background-color: #fff;
+    border-bottom: 1px solid #eee;
 
     // pc 헤더
     .header {
@@ -195,7 +196,6 @@
 
     #headerGnb {
         width: 100%;
-        border-bottom: 1px solid #eee;
         background-color: #fff;
 
         &.sticky {
@@ -203,6 +203,7 @@
             top: 0;
             left: 0;
             z-index: 99;
+            border-bottom: 1px solid #eee;
         }
         .gnb_area {
             display: flex;

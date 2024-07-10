@@ -46,6 +46,13 @@
                             background-position: center;
                             background-repeat: no-repeat;
                             background-color: #eee;
+
+                            @media all and (max-width: 680px) {
+                                width: 50px;
+                                height: 50px;
+                                background-size: 30px;
+                                border-radius: 15px;
+                            }
                         }
                         .qm_txt {
                             width: 100%;
@@ -110,68 +117,96 @@
     @include tablet {
         .quick_menu_wrap {
             .quick_menu_container {
-                width: 650px;
-                overflow: hidden;
+                width: 100%;
 
                 .quick_menu_list {
+                    display: grid;
+                    grid-template-columns: repeat(7, 1fr);
+                    justify-items: center;
+                    gap: 20px 10px;
                     overflow: visible;
-                    transition-duration: .1s;
+
+                    .quick_menu_item {
+                        width: auto;
+
+                        .quick_menu_link {
+                            height: auto;
+
+                            .bg_ico {
+                                width: 60px;
+                                height: 60px;
+                                background-size: 40px;
+                            }
+                            .qm_txt {
+                                font-size: 1.8vw;
+                            }
+                        }
+                    }
                 }
-                .qm_prev_btn, .qm_next_btn {
+                .qm_prev_btn,
+                .qm_next_btn {
                     display: none;
                 }
             }
         }
     }
-    // @media all and (max-width: 710px) {
-    //     .quick_menu {
-    //         .quick_menu_list {
-    //             .quick_menu_item {
-    //                 width: 14%;
+    @media all and (max-width: 600px) {
+        .quick_menu_wrap {
+            .quick_menu_container {
+                .quick_menu_list {
+                    grid-template-columns: repeat(5, 1fr);
 
-    //                 .quick_menu_link {
-    //                     .bg_ico {
-    //                         width: 40px;
-    //                         height: 40px;
-    //                         border-radius: 10px;
-    //                         background-size: 32px;
-    //                     }
-    //                     .qm_txt {
-    //                         font-size: 1.1rem;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // @media all and (max-width: 560px) {
-    //     .quick_menu {
-    //         .quick_menu_list {
-    //             .quick_menu_item {
-    //                 width: 16%;
+                    .quick_menu_item {
+                        .quick_menu_link {
+                            height: auto;
 
-    //                 .quick_menu_link {
-    //                     .qm_txt {
-    //                         font-size: 1rem;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // @include mobile {
-    //     .quick_menu {
-    //         .quick_menu_list {
-    //             .quick_menu_item {
-    //                 width: 16%;
+                            .qm_txt {
+                                font-size: 2vw;
+                            }
+                        }
+                    }
+                    .quick_menu_item:nth-last-child(4) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    @include mobile {
+        .quick_menu_wrap {
+            .quick_menu_container {
+                width: 100%;
 
-    //                 .quick_menu_link {
-    //                     .qm_txt {
-    //                         font-size: 1rem;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+                .quick_menu_list {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    justify-items: center;
+                    gap: 20px 0;
+                    overflow: visible;
+
+                    .quick_menu_item {
+                        width: auto;
+
+                        .quick_menu_link {
+                            height: auto;
+
+                            .bg_ico {
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 15px;
+                                background-size: 30px;
+                            }
+                            .qm_txt {
+                                font-size: 2.4vw;
+                            }
+                        }
+                    }
+                }
+                .qm_prev_btn,
+                .qm_next_btn {
+                    display: none;
+                }
+            }
+        }
+    }
 }
