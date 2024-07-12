@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalTsItems = tsSlideItem.length;
 
     let tScurrentIndex = 0;
-    let tsSlideInterval;
 
     /* 퀵메뉴 슬라이드 함수 */
     // 이전 퀵메뉴 슬라이드
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let visibleItems;
         let maxIndex;
         let currentIndex = 0;
-        let isTouchEnabled = false;
 
         function updateProductSlide() {
             const itemWidth = items[0].clientWidth;
@@ -44,6 +42,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             list.style.transform = `translateX(${offset}px)`;
             list.style.transition = `all .2s ease`;
+        }
+
+        updateProductSlide();
+
+        // 다음 슬라이드 함수
+        function handleNextSlide() {
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateProductSlide();
+            }
+        }
+
+        // 이전 슬라이드 함수
+        function handlePrevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateProductSlide();
+            }
         }
 
         // 다음 슬라이드 함수
@@ -62,54 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        function enableTouchSlide() {
-            let start_x, end_x;
-
-            function touch_start(event) {
-                start_x = event.touches[0].pageX;
-            }
-
-            function touch_end(event) {
-                end_x = event.changedTouches[0].pageX;
-                if (start_x > end_x) {
-                    handleNextSlide();
-                } else {
-                    handlePrevSlide();
-                }
-            }
-
-            list.addEventListener("touchstart", touch_start);
-            list.addEventListener("touchend", touch_end);
-
-            return () => {
-                list.removeEventListener("touchstart", touch_start);
-                list.removeEventListener("touchend", touch_end);
-            };
-        }
-
-        let disableTouchSlide = () => {};
-
-        function handlePdResize() {
-            if (window.innerWidth > 720) {
-                if (isTouchEnabled) {
-                    disableTouchSlide();
-                    isTouchEnabled = false;
-                }
-                prevBtn.addEventListener("click", handlePrevSlide);
-                nextBtn.addEventListener("click", handleNextSlide);
-                updateProductSlide();
-            } else {
-                prevBtn.removeEventListener("click", handlePrevSlide);
-                nextBtn.removeEventListener("click", handleNextSlide);
-                if (!isTouchEnabled) {
-                    disableTouchSlide = enableTouchSlide();
-                    isTouchEnabled = true;
-                }
-            }
-        }
-
-        window.addEventListener("resize", handlePdResize);
-        handlePdResize();
+        prevBtn.addEventListener("click", handlePrevSlide);
+        nextBtn.addEventListener("click", handleNextSlide);
+        window.addEventListener("resize", function () {
+            updateProductSlide();
+        });
     });
 
     /* 타임세일 슬라이드 함수 */
@@ -122,7 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         timeSale.style.transform = `translateX(${offset}px)`;
     }
+
     updateTsSlide();
+
     // 다음 슬라이드 함수
     function handleClickNextTsSlide() {
         if (tScurrentIndex < totalTsItems - 2) {
@@ -145,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // 자동 슬라이드 시작 함수
     function startTsAutoSlide() {
-        tsSlideInterval = setInterval(() => {
+        setInterval(() => {
             if (tScurrentIndex < totalTsItems - 2) {
                 tScurrentIndex++;
             } else {
@@ -158,8 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 리사이즈 함수
     function handleResize() {
-        // 슬라이드 위치를 업데이트하여 반응형을 유지
-        updateTsSlide();
+        updateTsSlide(); // 슬라이드 위치를 업데이트하여 반응형을 유지
     }
 
     // 페이지 로드 시 자동 슬라이드 시작

@@ -61,14 +61,6 @@
             }
         }
     }
-
-    // 미디어쿼리
-    @include tablet {
-        display: none;
-    }
-    @include mobile {
-        display: none;
-    }
 }
 
 #sideQmBtns {

@@ -53,6 +53,7 @@ address {
 button {
   border: 0;
   background-color: transparent;
+  color: #111;
   cursor: pointer;
 }
 
@@ -228,16 +229,6 @@ fieldset {
 }
 #sideQuickMenu .side_Qm_wrap .side_banner_list .side_bn_item .side_bn_link .side_bn_img {
   border-radius: 6px;
-}
-@media all and (min-width: 481px) and (max-width: 768px) {
-  #sideQuickMenu {
-    display: none;
-  }
-}
-@media all and (max-width: 480px) {
-  #sideQuickMenu {
-    display: none;
-  }
 }
 
 #sideQmBtns {

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const totalItems = slideItem.length; // 캐러셀 전체 아이템 수
     let currentIndex = 0; // 현재 인덱스
-    let slideInterval;
+    let slideInterval; // 자동 슬라이드 정지를 위해 선언
 
     showCount.innerHTML = `1 / <em class="total">${totalItems}</em>`; // 현재 카운트 표시
 
