@@ -6,7 +6,7 @@ const sideMenuBtn = document.querySelector(".side_menu_btn");
 const sideMenuLink = document.querySelector(".side_menu_link");
 const sideMenuDepth = document.querySelector(".side_menu_depth");
 // 사이드 퀵메뉴
-const sideQmWrap = document.querySelector(".side_Qm_wrap");
+const sideQuickMenu = document.getElementById("sideQuickMenu");
 const showBtn = document.querySelector(".show_btn");
 const topBtn = document.querySelector(".top");
 // 푸터
@@ -60,7 +60,7 @@ function handleClickFmBtn() {
 // 사이드 퀵메뉴
 // 퀵메뉴 더보기
 function handleClickShowBtn() {
-    sideQmWrap.classList.toggle("show");
+    sideQuickMenu.classList.toggle("show");
     showBtn.classList.toggle("active");
 }
 // 상단 이동

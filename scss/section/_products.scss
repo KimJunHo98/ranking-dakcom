@@ -25,27 +25,17 @@
                     display: flex;
                     flex-direction: row;
                     flex-wrap: nowrap;
-                    overflow: hidden;
 
                     .products_item {
-                        width: 23%;
+                        width: 25%;
                         flex: 0 0 auto;
-                        margin: 0 1%;
-
-                        @media all and (max-width: 1000px) {
-                            width: 25%;
-                            margin: 0;
-                        }
+                        padding: 0 1%;
 
                         .products_link {
                             width: 100%;
                             display: block;
 
                             .products_item_img {
-                                @media all and (max-width: 1000px) {
-                                    padding: 0 20px;
-                                }
-
                                 &.ranking_item_img {
                                     position: relative;
 
@@ -73,10 +63,6 @@
                             .products_item_txt {
                                 width: 100%;
                                 padding: 10px 5px;
-
-                                @media all and (max-width: 1000px) {
-                                    padding: 10px 20px;
-                                }
 
                                 .item_title {
                                     font-size: 1.8rem;
@@ -145,9 +131,6 @@
                 &:hover {
                     background-color: var(--mainCr);
                 }
-                &.invisible {
-                    opacity: 0.5;
-                }
             }
             .qd_prev_btn {
                 left: -15px;
@@ -175,21 +158,6 @@
 
                 .right_arrow {
                     padding-left: 5px;
-                }
-            }
-        }
-        &.package {
-            .product_list_wrap {
-                .product_list_inner {
-                    .package_list {
-                        .package_item {
-                            width: 31.3%;
-                        }
-                    }
-                }
-                .qd_prev_btn,
-                .qd_next_btn {
-                    top: 38%;
                 }
             }
         }
@@ -336,9 +304,6 @@
                     &:hover {
                         background-color: var(--mainCr);
                     }
-                    &.invisible {
-                        opacity: 0.5;
-                    }
                 }
                 .qd_prev_btn {
                     left: -24px;
@@ -399,6 +364,8 @@
 
                             .tabmenu_visual_img {
                                 img {
+                                    height: 100%;
+                                    min-height: 200px;
                                     object-fit: cover;
                                     border-radius: 15px;
                                 }
