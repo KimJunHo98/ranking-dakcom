@@ -70,6 +70,56 @@
                             }
                         }
                     }
+                    .quick_menu_link22 {
+                        .bg_ico {
+                            .dots {
+                                width: 6px;
+                                height: 6px;
+                                display: block;
+                                position: relative;
+                                top: 50%;
+                                left: 50%;
+                                border-radius: 6px;
+                                border: 1px solid #222;
+                                transform: translate(-50%, -50%);
+
+                                &:before {
+                                    content: "";
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 8px;
+                                    transform: translateY(-50%);
+                                    border-radius: 6px;
+                                    border: 1px solid #222;
+
+                                }
+                                &:after {
+                                    content: "";
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 8px;
+                                    transform: translateY(-50%);
+                                    border-radius: 6px;
+                                    border: 1px solid #222;
+                                }
+                            }
+                            &:hover {
+                                .dots {
+                                    border-color: var(--accentCr);
+
+                                    &::after, &::before {
+                                        border-color: var(--accentCr);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
             .qm_prev_btn,
@@ -120,12 +170,21 @@
                 width: 100%;
 
                 .quick_menu_list {
+                    width: 100%;
                     display: grid;
-                    grid-template-columns: repeat(7, 1fr);
+                    grid-template-columns: repeat(11, 1fr);
                     justify-items: center;
-                    gap: 20px 10px;
-                    overflow: visible;
+                    gap: 20px 40px;
+                    align-items: unset;
+                    overflow: auto;
+                    scroll-snap-type: x mandatory;
+                    // 스크롤 바 숨김
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
 
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
                     .quick_menu_item {
                         width: auto;
 
